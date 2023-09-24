@@ -1,0 +1,19 @@
+import { useState } from "react";
+import ModalBasic from "../component/ModalBasic";
+
+// 모달을 노출하는 페이지
+export default function Modal() {
+  // 모달창 노출 여부 state
+  const [modalOpen, setModalOpen] = useState(false);
+
+  // 모달창 노출
+  const showModal = () => {
+    setModalOpen(true);
+  };
+  return (
+    <div>
+      <div onClick={showModal}>모달 띄우기</div>
+      {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
+    </div>
+  );
+}
